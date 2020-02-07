@@ -22,5 +22,7 @@ test('add_todo() should return lest + the new obj.', function () {
    description: 'smash avocados',
    done: true,}];
    expect(actual).toEqual(expected);
+   expect(actual).not.toBe(expected);
+
    });
  
