@@ -5,7 +5,10 @@ var logic = require('./logic');
 //   t.pass();
 //   t.end();
 // });
-const todo_lest = [{id: 1,description: 'smash', done: false},{id: 0,description: 'smash avocados',done: true},{id: 2,description: 'make coffee',done: false}]
+const todo_lest = [
+  {id: 1,description: 'smash', done: false},
+  {id: 0,description: 'smash avocados',done: true},
+  {id: 2,description: 'make coffee',done: false}]
 
 test('add_todo() should return lest + the new obj.', function () {
   let actual = logic.addTodo(todo_lest,{
@@ -43,8 +46,16 @@ test('mark todo should return array done for the object id arg',()=>{
         expect(typeof(actual)).toBe(typeof(expected))
         expect(actual).toEqual(expected)
         expect(actual).not.toBe(expected)
-
-
 })
    
-   
+test('sort function must return array of objects sortinfg by function you send', function(){
+  actual=logic.sortTodos(todo_lest,"id")
+  expected=[{id: 1,description: 'smash', done: false},{id: 0,description: 'smash avocados',done: true},{id: 2,description: 'make coffee',done: false}]
+  expected2=[
+    {id: 0,description: 'smash avocados',done: true},
+    {id: 1,description: 'smash', done: false},
+    {id: 2,description: 'make coffee',done: false}]
+    expect(actual).not.toBe(expected)
+    expect(actual).toEqual(expected)
+  // expect(actual).toEqual(expected2)
+  })
