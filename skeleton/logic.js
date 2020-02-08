@@ -53,12 +53,9 @@ var todoFunctions = {
     // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
     // sortFunction will have same signature as the sort function in array.sort
     // hint: array.slice, array.sort
-   const sorting = todos.cloneArrayOfObjects(todos)
-   console.log(sorting)
-    sortFunction.sort(a,b => {
-      (a.description.slice(0,1) > b.description.slice(0,1)) ? 1 : -1
-    })
-
+   return(this.cloneArrayOfObjects(todos).sort((a,b) => {
+    return (a.sortFunction > b.sortFunction) ? -1 : 1
+    }))
   },
 };
 

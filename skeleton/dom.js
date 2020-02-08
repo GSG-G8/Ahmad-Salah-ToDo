@@ -77,6 +77,6 @@
     // you may want to add a class for css
     container.replaceChild(todoListNode, container.firstChild);
   };
-
   if (container) renderState(state);
+  // todoFunctions.sortTodos(state,'id')
 })();
