@@ -54,6 +54,7 @@
       event.preventDefault();
          const newTodo = {id: todoFunctions.generateId(),description: description.value,done: false,}
          const newState = todoFunctions.addTodo(state, newTodo);
+        //  console.log(newState)
          update(newState);  
       });
     }
