@@ -18,7 +18,9 @@
     var todoNode = document.createElement('li');
     // you will need to use addEventListener
     todoNode.addEventListener('click',()=>{
-
+      var newState = todoFunctions.markTodo(state, todo.id);
+      //console.log(newState)
+      update(newState);
     })
 
 
@@ -26,7 +28,7 @@
     var desc = document.createElement('span');
     desc.textContent=todo.description
     todoNode.appendChild(desc);
-
+    if(todo.done) todoNode.classList.toggle("checked")
 
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
@@ -37,9 +39,8 @@
     todoNode.appendChild(deleteButtonNode);
 
     // add markTodo button
-
-    // add classes for css
-
+    deleteButtonNode.textContent="Delete"
+    // aDd classes for css
     return todoNode;
   };
 

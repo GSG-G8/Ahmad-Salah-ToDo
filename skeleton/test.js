@@ -5,11 +5,7 @@ var logic = require('./logic');
 //   t.pass();
 //   t.end();
 // });
-const todo_lest = [{
-  id: 1,
-  description: 'smash',
-  done: false,   
-}]
+const todo_lest = [{id: 1,description: 'smash', done: false},{id: 0,description: 'smash avocados',done: true},{id: 1,description: 'make coffee',done: false}]
 
 test('add_todo() should return lest + the new obj.', function () {
   let actual = logic.addTodo(todo_lest,{
